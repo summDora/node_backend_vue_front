@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>木卫六产品维修手册</title>
+    <link rel="stylesheet" href="./font/font.css">
+    <script src="./jquery-1.11.3.js"></script>
+    <style>
+        body,html,p{margin: 0;padding: 0;}
+        body{
+            background-color:#f5f5f5;
+            font-family: 'PF';
+            padding-top: 30px;
+        }
+        .container{
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        header{
+            color: #FA253A;
+            margin: auto;
+            padding: 10px 5px;
+            min-width: 250px;
+            font-size: 30px;
+            color: #666;
+            text-align: center;
+            border-radius: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .question{
+            padding:30px 40px 0px 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .detail{
+            width:45%;
+            font-size: 18px;
+            line-height: 50px;
+            padding: 20px 0px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            background-size: 50% 50%;
+            background-color:#ffffffbd ;
+        }
+        .question:after{
+            content:' ';
+            width: 200px;
+            height:0;
+            display:block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>木卫六产品维修手册</header>
+        <div class="question"></div>
+    </div>
+    <script>
+        $(function(){
+            let url='http://helper.movevi.com/manual';
+            let str='';
+            $.ajax({
+                url:url+'/cate/getcatelist',
+                method:'get',
+                crossDomain: true,  
+                success:function(res){
+                }
+            })
+        })
+    </script>
+</body>
+</html>

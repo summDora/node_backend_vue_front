@@ -1,0 +1,21 @@
+.ive-table{
+    width: 100% !important;
+}
+.cate{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.option{
+    width:40%;
+    min-width: 400px;
+    padding-left: 70px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #515a6e;
+}
+.option p{
+    margin-bottom: 20px;
+}

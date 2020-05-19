@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'PF';
+    src:url('pingfang.ttf');
+    font-weight: normal;  
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'DIN';
+    src:url('DINCond-Bold.otf');
+    font-weight: normal;  
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'DINmedium';
+    src:url('DINCond-Medium.otf');
+    font-weight: normal;  
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'ABI';
+    src:url('Arial Bold Italic.ttf');
+    font-weight: normal;  
+    font-style: normal; 
+}

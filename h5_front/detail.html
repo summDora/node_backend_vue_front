@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细节图</title>
+    <link rel="stylesheet" href="./font/font.css">
+    <script src="./jquery-1.11.3.js"></script>
+    <style>
+        body,html,p{margin: 0;padding: 0;}
+        body{
+            font-family: 'PF';
+            background-color:#f5f5f5;
+        }
+        .issue,.img{
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .img .coverimg{
+            width: 100%;;
+        }
+        .container{
+            max-width: 700px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        .container header{
+            background-color:rgba(180, 180, 180, 0.562);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding: 15px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        header img{
+            width: 24px;
+            height: 24px;
+            vertical-align: bottom;
+            cursor: pointer;
+        }
+        .video{
+            width:calc(100% - 32px);
+            padding: 10px 16px;
+        }
+        .videoinfo{
+            display: flex;
+            background-color: rgba(206, 206, 206, 0.464);
+            height: 50px;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+        .videoinfo img{
+            width: 50px;
+            height: 50px;
+        }
+        .videoinfo div{flex:1}
+        .videoinfo p{
+            text-align: center;
+            font-size: 14px;
+            line-height: 25px;
+        }
+        .videoinfo .remark{
+            font-size: 13px;
+        }
+        .videoinfo span{
+            display: inline-block;width: 0px;height: 0px;
+            overflow: hidden;
+        }
+        table{
+            color: rgb(95, 95, 95);
+            font-size: 16px;
+            text-align: center;
+            padding:10px 16px
+        }
+        th{
+            background: rgba(206, 206, 206, 0.464);
+        }
+        th,td{
+            height: 48px;
+            border-bottom:0.1px solid rgb(212, 212, 212);
+            border-right:0.1px solid rgb(212, 212, 212);
+            padding: 8px;
+        }
+        td{
+            font-size: 14px;
+        }
+        table tr td:last-child{text-align: left;border-right: none;}
+        table tr th:last-child{border-right: none;}
+        table tr td:first-child,table tr th:first-child{width:20%;}
+        table tr td:nth-child(2),table tr th:nth-child(2){width:24%;}
+        .content tr td:first-child,.content tr th:first-child{width:10%;}
+    </style>
+</head>
+<body>
+   <div class="container">
+        <header>
+            <img src="./image/close.png" alt="movevi">
+            <span class="title"></span>
+            <span style="display: inline-block;width: 24px;"></span> 
+        </header>
+        <div class="img">
+            <img class="coverimg" src="" alt="">
+        </div>
+        <div class="video"></div>
+        <div class="issue">
+            <div>
+                <table class="content" cellpadding="0" cellspacing='0'></table>
+            </div>
+        </div>
+   </div>
+    <script>
+        $(function(){
+            function getQueryString(name){
+                var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if(r!=null)return  unescape(r[2]); return null;
+            }
+            var id=getQueryString('typeid');
+            $('header img').click(function(){
+                window.location='./index.html'
+            })
+            
+            let url='http://helper.movevi.com/manual';
+            let str='';
+            $.ajax({
+                url:url+'/cate/getcate',
+                method:'get',
+                data:{
+                    typeId:id
+                },
+                success:function(res){
+                   
+                }
+            })
+            $.ajax({
+                url:url+'/cate/getvideo',
+                method:'get',
+                data:{
+                    typeId:id
+                },
+                success:function(res){
+                   
+                }
+            })
+            $.ajax({
+                url:url+'/issue/getissuelist',
+                method:'get',
+                data:{
+                    typeId:id
+                },
+                success:function(res){
+                  
+                }
+            })
+            $(".video").on('click','.videoinfo',function(){
+                let url=$('.video span').html()
+                window.location=url
+            })
+        })
+    </script>
+</body>
+</html>
